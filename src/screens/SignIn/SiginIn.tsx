@@ -14,15 +14,12 @@ const SignIn = ({ navigation }: any) => {
     setEmail,
     password,
     setPassword,
-    error,
     handleLogin,
   } = useSignIn(navigation); 
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Login</Text>
-
-      {error ? <Text style={styles.errorText}>{error}</Text> : null}
 
       <TextInput
         style={styles.input}

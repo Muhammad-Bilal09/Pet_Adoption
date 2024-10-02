@@ -10,11 +10,11 @@ const useSignIn = (navigation: any) => {
 
   const handleLogin = () => {
     if (!email || !password) {
-      setError('Email and password are required');
+      Alert.alert('Email and password are required');
       return;
     }
     if (!validateEmail(email)) {
-      setError('Please enter a valid email');
+      Alert.alert('Please enter a valid email');
       return;
     }
 
@@ -27,11 +27,11 @@ const useSignIn = (navigation: any) => {
       })
       .catch(error => {
         if (error.code === 'auth/user-not-found') {
-          setError('No user found with this email.');
+          Alert.alert('No user found with this email.');
         } else if (error.code === 'auth/wrong-password') {
-          setError('Incorrect password.');
+          Alert.alert('Incorrect password.');
         } else {
-          setError('Login failed. Please try again.');
+          Alert.alert('Login failed. Please try again.');
         }
       });
   };
